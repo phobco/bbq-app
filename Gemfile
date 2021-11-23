@@ -9,7 +9,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'jbuilder', '~> 2.7'
 gem 'uglifier'
-
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'

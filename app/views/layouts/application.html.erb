@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bbq</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for?(:title) ? yield(:title) : "Bbq" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +13,44 @@
   </head>
 
   <body>
-    <%= yield %>
+    
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <%= link_to "BBQ!", root_path, class: 'navbar-brand' %>
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><%= link_to "Link1", "/path1", class: 'nav-link active' %></li>
+            <li class="nav-item"><%= link_to "Link2", "/path2", class: 'nav-link active' %></li>
+            <li class="nav-item"><%= link_to "Link3", "/path3", class: 'nav-link active' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-lg-9">
+          <%= yield %>
+        </div>
+        <div class="col-lg-3">
+          <div class="card card-body bg-light">
+            <h3>Sidebar</h3>
+            <ul class="nav flex-column">
+              <li class="nav-header">Sidebar</li>
+              <li><%= link_to "Link1", "/path1", class: 'nav-link active'  %></li>
+              <li><%= link_to "Link2", "/path2", class: 'nav-link active'  %></li>
+              <li><%= link_to "Link3", "/path3", class: 'nav-link active'  %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; Company 2021</p>
+      </footer>
+
+    </div>
+
   </body>
 </html>

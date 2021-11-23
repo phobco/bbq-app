@@ -4,8 +4,7 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
+Rails.start()
 
 import 'bootstrap'
 import "../stylesheets/application"
-
-Rails.start()

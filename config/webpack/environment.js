@@ -1,6 +1,6 @@
 const { environment } = require('@rails/webpacker')
 
-// module.exports = environment
+module.exports = environment
 
 const webpack = require("webpack")
 

@@ -11,6 +11,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'uglifier'
 gem 'devise'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

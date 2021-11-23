@@ -6,5 +6,6 @@
 import Rails from "@rails/ujs"
 Rails.start()
 
-import 'bootstrap'
-import "../stylesheets/application"
+import 'bootstrap/dist/js/bootstrap'
+import 'bootstrap/dist/css/bootstrap'
+import 'stylesheets/application'

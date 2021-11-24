@@ -8,9 +8,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -34,6 +33,17 @@
     </div>
 
     <div class="container mt-3">
+
+       <% if flash.any? %>
+          <% flash.each do |name, message| %>
+            <div class="alert alert-dismissible fade show" role="alert">
+            <%= content_tag :p, message, class: "message-#{name}", role: 'alert' %>
+          <% end %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      <% end %>
+
+
       <div class="row">
         <div class="col-lg-9">
           <%= yield %>
@@ -47,6 +57,5 @@
       </footer>
 
     </div>
-
   </body>
 </html>

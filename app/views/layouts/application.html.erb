@@ -36,13 +36,12 @@
 
        <% if flash.any? %>
           <% flash.each do |name, message| %>
-            <div class="alert alert-dismissible fade show" role="alert">
-            <%= content_tag :p, message, class: "message-#{name}", role: 'alert' %>
+            <div class="alert alert-<%= flash_class_name(name) %> alert-dismissible fade show" role="alert">
+              <%= message %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
           <% end %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
       <% end %>
-
 
       <div class="row">
         <div class="col-lg-9">

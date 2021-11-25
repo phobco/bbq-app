@@ -42,6 +42,7 @@ ru:
     change: Изменить
     update: Обновить
     event_create: Создать событие
+    event_delete: Удалить событие
     account_delete: Удалить аккаунт
     password_edit: Сменить пароль
   

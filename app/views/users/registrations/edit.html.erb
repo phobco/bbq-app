@@ -1,4 +1,4 @@
-<h2>Изменение email и пароля</h2>
+<h2><%= t('titles.password_edit')%></h2>
 
 <div class="col-md-6">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -14,7 +14,7 @@
     <% end %>
 
     <div class="mb-3">
-      <%= f.label 'Новый пароль', class: 'form-label' %> <i>(оставьте пустым, если не хотите менять)</i>
+      <%= f.label :password, class: 'form-label' %> <i>(оставьте пустым, если не хотите менять)</i>
       <%= f.password_field :password, class: 'form-control' %>
       <% if @minimum_password_length %>
         <em>Не менее <%= @minimum_password_length %> символов</em>
@@ -22,24 +22,24 @@
     </div>
 
     <div class="mb-3">
-      <%= f.label 'Подтверждение пароля', class: 'form-label' %>
+      <%= f.label :password_confirmation, class: 'form-label' %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= f.label 'Текущий пароль', class: 'form-label' %>
+      <%= f.label :current_password, class: 'form-label' %>
       <%= f.password_field :current_password, class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= f.submit "Обновить", class: 'btn btn-primary' %>
-      или <%= link_to 'вернуться', user_path(current_user) %>
+      <%= f.submit t('buttons.update'), class: 'btn btn-primary' %>
+      или <%= link_to t('buttons.back'), user_path(current_user) %>
     </div>
   <% end %>
 
-  <h3 class="mb-3">Удаление аккаунта</h3>
+  <h3 class="mb-3"><%= t('titles.account_delete') %></h3>
 
-  <%= button_to "Удалить аккаунт", registration_path(resource_name),
-    data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger btn-sm mb-3' %>
+  <%= button_to t('buttons.account_delete'), registration_path(resource_name),
+    data: { confirm: t('messages.are_you_sure') }, method: :delete, class: 'btn btn-danger btn-sm mb-3' %>
 
 </div>

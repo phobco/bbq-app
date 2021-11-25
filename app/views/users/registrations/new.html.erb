@@ -10,6 +10,11 @@
     </div>
 
     <div class="mb-3">
+      <%= f.label 'Имя', class: 'form-label' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
       <%= f.label 'Пароль' %>
       <% if @minimum_password_length %>
       <em>(Не менее <%= @minimum_password_length %> символов)</em>

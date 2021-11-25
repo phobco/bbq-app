@@ -1,0 +1,60 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+      event: Событие
+    attributes:
+      user:
+        email: Email
+        name: Имя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+      event:
+        title: Название
+        address: Место проведения
+        datetime: Дата и время
+        description: Описание
+
+  controllers:
+    events:
+      created: Вы создали новое мероприятие
+      updated: Вы обновили мероприятие
+      destroyed: Вы удалили мероприятие :(
+    users:
+      updated: Вы обновили свой профиль
+  
+  app:
+    name: Шашлыки
+    company: Хороший программист
+
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
+
+  buttons:
+    sign_up: Зарегистрироваться
+    sign_in: Войти
+    log_out: Выйти
+    profile: Профиль
+    save: Сохранить
+    back: вернуться
+    change: Изменить
+    update: Обновить
+    event_create: Создать событие
+    account_delete: Удалить аккаунт
+    password_edit: Сменить пароль
+  
+  titles:
+    events: События
+    event_create: Создание события
+    event_edit: Редактирование события
+    account_delete: Удаление аккаунта
+    account_edit: Редактирование профиля
+    password_edit: Изменение пароля
+    sign_up: Регистрация
+    sign_in: Войти
+    organized: Организовал
+  
+  messages:
+    are_you_sure: Вы уверены?

@@ -28,9 +28,9 @@ ru:
     company: Хороший программист
 
   errors:
-    one: '%{count} ошибка'
-    few: '%{count} ошибки'
-    many: '%{count} ошибок'
+    one: 'В вашей форме %{count} ошибка'
+    few: 'В вашей форме %{count} ошибки'
+    many: 'В вашей форме %{count} ошибок'
 
   buttons:
     sign_up: Зарегистрироваться
@@ -57,5 +57,12 @@ ru:
     sign_in: Войти
     organized: Организовал
   
-  messages:
+  confirmation:
     are_you_sure: Вы уверены?
+
+  text:
+    no_events: Пользователь пока не организовал ни одного события
+    waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
+    leave_empty: (оставьте пустым, если не хотите менять)
+    password_length: 'Не менее %{length} символов'
+    or: или

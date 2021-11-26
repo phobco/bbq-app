@@ -16,10 +16,10 @@
 
     <div class="mb-3">
       <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(Не менее <%= @minimum_password_length %> символов)</em>
-      <% end %>
       <%= f.password_field :password, class: 'form-control' %>
+      <% if @minimum_password_length %>
+        <em><%= t('text.password_length', length: @minimum_password_length) %></em>
+      <% end %>
     </div>
 
     <div class="mb-3">

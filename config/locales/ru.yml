@@ -1,68 +1,68 @@
 ru:
   activerecord:
-    models:
-      user: Пользователь
-      event: Событие
     attributes:
       user:
         email: Email
         name: Имя
         password: Пароль
         password_confirmation: Подтверждение пароля
-      event:
-        title: Название
-        address: Место проведения
-        datetime: Дата и время
-        description: Описание
+    event:
+      address: Место проведения
+      datetime: Дата и время
+      description: Описание
+      title: Название
+    models:
+      event: Событие
+      user: Пользователь
+      
+  app:
+    company: Хороший программист
+    name: Шашлыки
 
+  buttons:
+    account_delete: Удалить аккаунт
+    back: вернуться
+    change: Изменить
+    event_create: Создать событие
+    event_delete: Удалить событие
+    log_out: Выйти
+    password_edit: Сменить пароль
+    profile: Профиль
+    save: Сохранить
+    sign_in: Войти
+    sign_up: Зарегистрироваться
+    update: Обновить
+    
   controllers:
     events:
       created: Вы создали новое мероприятие
-      updated: Вы обновили мероприятие
       destroyed: Вы удалили мероприятие :(
+      updated: Вы обновили мероприятие
     users:
       updated: Вы обновили свой профиль
   
-  app:
-    name: Шашлыки
-    company: Хороший программист
+  confirmation:
+    are_you_sure: Вы уверены?
 
   errors:
     one: 'В вашей форме %{count} ошибка'
     few: 'В вашей форме %{count} ошибки'
     many: 'В вашей форме %{count} ошибок'
 
-  buttons:
-    sign_up: Зарегистрироваться
-    sign_in: Войти
-    log_out: Выйти
-    profile: Профиль
-    save: Сохранить
-    back: вернуться
-    change: Изменить
-    update: Обновить
-    event_create: Создать событие
-    event_delete: Удалить событие
-    account_delete: Удалить аккаунт
-    password_edit: Сменить пароль
-  
+  text:
+    leave_empty: (оставьте пустым, если не хотите менять)
+    no_events: Пользователь пока не организовал ни одного события
+    or: или
+    password_length: 'Не менее %{length} символов'
+    waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
+
   titles:
+    account_delete: Удаление аккаунта
+    account_edit: Редактирование профиля
     events: События
     event_create: Создание события
     event_edit: Редактирование события
-    account_delete: Удаление аккаунта
-    account_edit: Редактирование профиля
+    organized: Организовал
     password_edit: Изменение пароля
     sign_up: Регистрация
     sign_in: Войти
-    organized: Организовал
-  
-  confirmation:
-    are_you_sure: Вы уверены?
-
-  text:
-    no_events: Пользователь пока не организовал ни одного события
-    waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
-    leave_empty: (оставьте пустым, если не хотите менять)
-    password_length: 'Не менее %{length} символов'
-    or: или

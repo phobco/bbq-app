@@ -14,7 +14,6 @@ class EventsController < ApplicationController
     @event = current_user.events.build
   end
 
-
   def edit
   end
 
@@ -48,7 +47,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: t('controllers.events.destroyed') }
+      format.html { redirect_to events_path, notice: t('controllers.events.destroyed') }
       format.json { head :no_content }
     end
   end

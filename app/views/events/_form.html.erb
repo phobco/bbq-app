@@ -23,6 +23,7 @@
 
   <div class="actions">
     <%= f.submit t('buttons.save'), class: 'btn btn-primary' %>
-    или <%= link_to t('buttons.back'), user_path(current_user) %>
+    <%= t('text.or')%>
+    <%= link_to t('buttons.back'), user_path(current_user) %>
   </div>
 <% end %>

@@ -25,6 +25,9 @@ ru:
     company: Хороший программист
     name: Шашлыки
 
+  account:
+    destroy_confirm: Вы уверены?
+
   buttons:
     account_delete: Удалить аккаунт
     back: вернуться
@@ -60,15 +63,13 @@ ru:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
 
-  account:
-    destroy_confirm: Вы уверены?
-
   errors:
     one: 'В вашей форме %{count} ошибка'
     few: 'В вашей форме %{count} ошибки'
     many: 'В вашей форме %{count} ошибок'
 
   text:
+    already_exists: уже зарегистрирован
     leave_empty: (оставьте пустым, если не хотите менять)
     no_events: Пользователь пока не организовал ни одного события
     or: или
@@ -89,7 +90,6 @@ ru:
     sign_up: Регистрация
     sign_in: Войти
     
-  
   subscriptions:
     subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      destroy_confirm: Вы уверены, что хотите удалить эту подписку?

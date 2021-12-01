@@ -38,6 +38,7 @@ ru:
     sign_in: Войти
     sign_up: Зарегистрироваться
     update: Обновить
+    send: Отправить
     
   controllers:
     events:
@@ -80,10 +81,14 @@ ru:
     events: События
     event_create: Создание события
     event_edit: Редактирование события
+    event_creator: 'Зовёт:'
+    event_subscribers: 'Пойдут:'
+    join: 'Я пойду:'
     organized: Организовал
     password_edit: Изменение пароля
     sign_up: Регистрация
     sign_in: Войти
+    
   
   subscriptions:
     subscription:

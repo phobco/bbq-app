@@ -6,6 +6,12 @@ ru:
         name: Имя
         password: Пароль
         password_confirmation: Подтверждение пароля
+      comment:
+        body: Комментарий
+        user_name: Имя пользователя
+      subscription:
+        user_name: Имя пользователя
+        user_email: Email
     event:
       address: Место проведения
       datetime: Дата и время
@@ -40,9 +46,21 @@ ru:
       updated: Вы обновили мероприятие
     users:
       updated: Вы обновили свой профиль
-  
-  confirmation:
-    are_you_sure: Вы уверены?
+    comments:
+      destroyed: Комментарий удален
+      created: Ваш комментарий добавлен
+      error: Ошибка с комментарием
+    subscriptions:
+      created: Вы подписаны на это событие
+      destroyed: Участник отписан
+      error: Подписка/отписка не сработала
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+
+  account:
+    destroy_confirm: Вы уверены?
 
   errors:
     one: 'В вашей форме %{count} ошибка'
@@ -66,3 +84,7 @@ ru:
     password_edit: Изменение пароля
     sign_up: Регистрация
     sign_in: Войти
+  
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'

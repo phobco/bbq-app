@@ -11,22 +11,14 @@ class Subscription < ApplicationRecord
   validate :email_exists, unless: -> { user.present? }
 
   def user_name
-    if user.present?
-      user.name
-    else
-      super
-    end
+    user&.name || super
   end
 
   def user_email
-    if user.present?
-      user.email
-    else
-      super
-    end
+    user&.email || super
   end
 
   def email_exists
-    errors.add(:user_email, I18n.t('text.already_exists')) if User.find_by(email: user_email)
+    errors.add(:user_email, :already_exists) if User.find_by(email: user_email)
   end
 end

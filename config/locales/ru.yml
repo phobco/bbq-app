@@ -20,7 +20,13 @@ ru:
     models:
       event: Событие
       user: Пользователь
-      
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              already_exists: уже зарегистрирован
+
   app:
     company: Хороший программист
     name: Шашлыки
@@ -69,7 +75,6 @@ ru:
     many: 'В вашей форме %{count} ошибок'
 
   text:
-    already_exists: уже зарегистрирован
     leave_empty: (оставьте пустым, если не хотите менять)
     no_events: Пользователь пока не организовал ни одного события
     or: или

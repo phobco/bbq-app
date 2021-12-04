@@ -13,6 +13,8 @@ ru:
       subscription:
         user_name: Имя пользователя
         user_email: Email
+      photo:
+        photo: 'Фотография'
     event:
       address: Место проведения
       datetime: Дата и время
@@ -21,6 +23,7 @@ ru:
     models:
       event: Событие
       user: Пользователь
+      photo: 'Фотография'
     errors:
       models:
         subscription:

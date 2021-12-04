@@ -1,6 +1,6 @@
 module ApplicationHelper
   def user_avatar(user)
-    asset_path('user.png')
+    user&.avatar&.url || asset_path('user.png')
   end
 
   def flash_class_name(name)

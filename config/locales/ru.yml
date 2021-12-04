@@ -2,6 +2,7 @@ ru:
   activerecord:
     attributes:
       user:
+        avatar: 'Аватар'
         email: Email
         name: Имя
         password: Пароль

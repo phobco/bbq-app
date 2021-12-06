@@ -5,6 +5,8 @@ ru:
         avatar: 'Аватар'
         email: Email
         name: Имя
+        new_password: Новый пароль
+        new_password_confirmation: Подтвердите новый пароль
         password: Пароль
         password_confirmation: Подтверждение пароля
       comment:
@@ -44,9 +46,11 @@ ru:
     change: Изменить
     event_create: Создать событие
     event_delete: Удалить событие
+    forgot_password: Забыли пароль?
     log_out: Выйти
     password_edit: Сменить пароль
     profile: Профиль
+    reset_password: Восстановить пароль
     save: Сохранить
     sign_in: Войти
     sign_up: Зарегистрироваться
@@ -92,11 +96,13 @@ ru:
   titles:
     account_delete: Удаление аккаунта
     account_edit: Редактирование профиля
+    change_password: Смена пароля
     events: События
     event_create: Создание события
     event_edit: Редактирование события
     event_creator: 'Зовёт:'
     event_subscribers: 'Пойдут:'
+    forgot_password: Забыли пароль?
     join: 'Я пойду:'
     organized: Организовал
     password_edit: Изменение пароля
@@ -106,3 +112,19 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: Вы уверены, что хотите удалить эту подписку?
+
+  event_mailer:
+    comment:
+      title: Новый комментарий
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор
+    subscription:
+      title: Новая подписка
+      name: Имя
+      email: Email
+      author: Автор
+      event: Событие
+      datetime: Состоится
+      owner: Организатор

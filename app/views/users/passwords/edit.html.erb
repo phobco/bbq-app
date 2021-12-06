@@ -1,0 +1,27 @@
+<h2><%= t('titles.change_password') %></h2>
+
+<div class="col-md-5">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <div class="mb-3">
+      <%= f.label :new_password, class: 'form-label' %><br />
+      <% if @minimum_password_length %>
+        <em><%= t('text.password_length', length: @minimum_password_length) %></em>
+      <% end %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :new_password_confirmation, class: 'form-label' %><br />
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.submit t('buttons.save'), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>

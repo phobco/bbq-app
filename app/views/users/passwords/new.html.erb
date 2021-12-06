@@ -1,0 +1,18 @@
+<h2><%= t('titles.forgot_password') %></h2>
+
+<div class="col-md-5">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="mb-3">
+      <%= f.label :email, class: 'form-label' %><br />
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.submit t('buttons.reset_password'), class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>

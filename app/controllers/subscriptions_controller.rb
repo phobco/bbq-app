@@ -8,6 +8,8 @@ class SubscriptionsController < ApplicationController
 
 
     if @new_subscription.save
+      EventMailer.subscription(@event, @new_subscription).deliver_now
+
       redirect_to @event, notice: t('controllers.subscriptions.created')
     else
       render 'events/show', alert: t('controllers.subscriptions.error')

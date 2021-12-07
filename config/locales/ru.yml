@@ -35,10 +35,6 @@ ru:
 
   app:
     company: Хороший программист
-    event_mailer:
-      subscription: 'Новая подписка на %{event}'
-      comment: 'Новый комментарий @ %{event}'
-      photo: 'Новая фотография %{event}'
     name: Шашлыки
 
   account:
@@ -126,19 +122,23 @@ ru:
       title: Новый комментарий
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime: Дата
       owner: Организатор
+      subject: 'Новый комментарий @ %{event}'
     subscription:
       title: Новая подписка
       name: Имя
       email: Email
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime: Дата
       owner: Организатор
+      subject: 'Новая подписка на %{event}'
     photo:
       title: Новая фотография
       author: Автор
       event: Событие
-      datetime: Состоится
+      datetime: Дата
       owner: Организатор
+      subject: 'Новая фотография %{event}'
+      

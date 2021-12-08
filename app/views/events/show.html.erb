@@ -56,7 +56,7 @@
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       
-      <% if @event.subscribers.present? %>
+      <% if @event.subscriptions.present? %>
         <div class="event-subscriptions">
           <h4><%= t('titles.event_subscribers') %></h4>
           <div>

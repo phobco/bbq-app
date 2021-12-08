@@ -62,6 +62,7 @@ ru:
       created: Вы создали новое мероприятие
       destroyed: Вы удалили мероприятие :(
       updated: Вы обновили мероприятие
+      wrong_pincode: Неверный пинкод!
     users:
       updated: Вы обновили свой профиль
     comments:
@@ -96,6 +97,8 @@ ru:
     no_events: Пользователь пока не организовал ни одного события
     or: или
     password_length: 'Не менее %{length} символов'
+    pincode: Пин-код
+    to_main: На главную
     waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
 
   titles:
@@ -111,6 +114,7 @@ ru:
     join: 'Я пойду:'
     organized: Организовал
     password_edit: Изменение пароля
+    pincode_access: Доступ только по пин-коду
     sign_up: Регистрация
     sign_in: Войти
     

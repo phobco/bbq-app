@@ -11,8 +11,6 @@ class SubscriptionsController < ApplicationController
       EventMailer.subscription(@event, @new_subscription).deliver_now
 
       redirect_to @event, notice: t('controllers.subscriptions.created')
-    elsif @event.user == current_user
-      redirect_to @event, alert: t('controllers.subscriptions.wrong_subscriber')
     else
       render 'events/show', alert: t('controllers.subscriptions.error')
     end

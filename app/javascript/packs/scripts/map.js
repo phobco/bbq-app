@@ -1,5 +1,5 @@
 ymaps.ready(init);
-var myMap;
+let myMap;
 
 function init(){
   address = document.getElementById('map').getAttribute('data-address');

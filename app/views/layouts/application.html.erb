@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><%= content_for?(:title) ? yield(:title) : t('app.name') %></title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a8fef2c1-4390-4cf1-8ba5-7361b45aff7b&lang=ru_RU" type="text/javascript"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -51,10 +52,10 @@
       <% end %>
 
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-10">
           <%= yield %>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">   
         </div>
       </div>
 

@@ -1,26 +1,25 @@
 ymaps.ready(init);
-let myMap;
 
 function init(){
   address = document.getElementById('map').getAttribute('data-address');
 
-  myMap = new ymaps.Map("map", {
-      center: [55.76, 37.64],
-      zoom: 10
+  const myMap = new ymaps.Map("map", {
+    center: [55.76, 37.64],
+    zoom: 10
   });
 
-  myGeocoder = ymaps.geocode(address);
+  const myGeocoder = ymaps.geocode(address);
 
   myGeocoder.then(
     function (res) {
-      coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+      const coordinates = res.geoObjects.get(0).geometry.getCoordinates();
 
       myMap.geoObjects.add(
-          new ymaps.Placemark(
-            coordinates,
-            {iconContent: address},
-            {preset: 'islands#blueStretchyIcon'}
-          )
+        new ymaps.Placemark(
+          coordinates,
+          {iconContent: address},
+          {preset: 'islands#blueStretchyIcon'}
+        )
       );
 
       myMap.setCenter(coordinates);

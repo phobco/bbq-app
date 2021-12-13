@@ -18,6 +18,11 @@
 }
 
 /* Avatars for users & events */
+.avatar {
+  border-radius: 100%;
+  max-width: 300px;
+}
+
 .img-icon, .img-icon-small {
   height: 50px;
   width: auto;

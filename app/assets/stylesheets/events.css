@@ -50,6 +50,14 @@
   height: 400px;
 }
 
+.map {
+  border: solid grey 1px;
+}
+
+.event-banner {
+  border-right: solid white 3px;
+}
+
 a {
   text-decoration: none;
 }

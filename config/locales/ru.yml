@@ -80,11 +80,20 @@ ru:
 
   comments:
     comment:
-      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      are_you_sure: Вы уверены, что хотите удалить этот комменатрий?
 
   events:
     show:
-      are_you_sure: Вы уверены, что хотите удалить мероприятие?
+      are_you_sure: Вы уверены, что хотите удалить это мероприятие?
+
+  photos:
+    photo:
+      are_you_sure: Вы уверены, что хотите удалить эту фотографию?
+      add: 'Добавил:'
+
+  subscriptions:
+    subscription:
+      are_you_sure: Вы уверены, что хотите отменить подписку?
 
   errors:
     one: 'В вашей форме %{count} ошибка'
@@ -116,10 +125,6 @@ ru:
     pincode_access: Доступ только по пин-коду
     sign_up: Регистрация
     sign_in: Войти
-    
-  subscriptions:
-    subscription:
-      destroy_confirm: Вы уверены, что хотите удалить эту подписку?
 
   event_mailer:
     comment:

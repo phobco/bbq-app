@@ -17,11 +17,11 @@ ru:
         user_email: Email
       photo:
         photo: 'Фотография'
-    event:
-      address: Место проведения
-      datetime: Дата и время
-      description: Описание
-      title: Название
+      event:
+        address: Место проведения
+        datetime: Дата и время
+        description: Описание
+        title: Название
     models:
       event: Событие
       user: Пользователь

@@ -24,6 +24,6 @@ class Subscription < ApplicationRecord
   end
 
   def subscriber
-    errors.add('') if user.events.include?(event)
+    errors.add(:user_id, :subscription_error) if event.user == user
   end
 end

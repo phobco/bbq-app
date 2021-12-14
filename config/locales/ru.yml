@@ -32,6 +32,7 @@ ru:
           attributes:
             user_email:
               already_exists: уже зарегистрирован
+            user_id:
               subscription_error: Нельзя подписаться на своё событие
 
   app:

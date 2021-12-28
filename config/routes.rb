@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  resources :users, only: %i[ show edit update ]
+  resources :users, only: %i[show edit update]
 
   resources :events do
-    resources :comments, only: %i[ create destroy ]
-    resources :subscriptions, only: %i[ create destroy ]
-    resources :photos, only: %i[ create destroy ]
+    resources :comments, only: %i[create destroy]
+    resources :subscriptions, only: %i[create destroy]
+    resources :photos, only: %i[create destroy]
 
     post :show, on: :member
   end

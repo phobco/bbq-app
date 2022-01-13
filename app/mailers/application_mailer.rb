@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'support@meet-ing-bbq.herokuapp.com'
+  default from: Rails.application.credentials.dig(:mail, :default_mail)
   layout 'mailer'
 end

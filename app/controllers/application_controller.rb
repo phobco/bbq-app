@@ -1,13 +1,15 @@
 class ApplicationController < ActionController::Base
   include Pundit
-  
-  before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from Pundit::NotAuthorizedError, with: :redirect_back
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
   helper_method :current_user_can_edit?
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:account_update, keys: %i[password password_confirmation current_password])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name])
   end
 
   def current_user_can_edit?(model)
@@ -15,5 +17,11 @@ class ApplicationController < ActionController::Base
       model.user == current_user ||
       (model.try(:event).present? && model.event.user == current_user)
     )
+  end
+
+  private
+
+  def redirect_back
+    redirect_to :back
   end
 end

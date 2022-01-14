@@ -5,6 +5,7 @@ ruby '2.7.4'
 
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'puma', '~> 5.0'
+gem 'pg'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'jbuilder', '~> 2.7'
@@ -17,13 +18,8 @@ gem 'rmagick'
 gem 'fog-aws'
 gem 'mailjet'
 
-group :production do
-  gem 'pg'
-end
-
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
 end
 
 group :development do

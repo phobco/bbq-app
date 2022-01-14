@@ -17,6 +17,7 @@ gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
 gem 'fog-aws'
 gem 'mailjet'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'

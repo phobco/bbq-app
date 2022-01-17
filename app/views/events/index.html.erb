@@ -1,9 +1,9 @@
 <h1><%= t('titles.events')%></h1>
 
 <div class="buffer-both">
-  <%= link_to t('buttons.event_create'), new_event_path, class: 'btn btn-success' %>
+  <%= link_to t('buttons.event_create'), new_event_path, class: 'btn btn-success rounded-pill' %>
 </div>
 
-<div class="row buffer-bottom">
+<div class="row">
   <%= render partial: 'events/event', collection: @events %>
 </div>

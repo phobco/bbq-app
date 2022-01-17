@@ -1,19 +1,19 @@
 <%= form_for [@event, comment] do |f| %>
     <%= render partial: 'partials/form_errors', locals: { model: comment } %>
 
-    <div class="mb-3">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control' %>
-    </div>
-
     <% unless user_signed_in? %>
-        <div class="mb-3">
+        <div class="col-md-4 mb-2 fs-5">
           <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control' %>
+          <%= f.text_field :user_name, class: 'form-control shadow-sm' %>
         </div>
     <% end %>
 
+    <div class="mb-3">
+      <%= f.label t('text.message'), class: 'mb-1 fs-5' %>
+      <%= f.text_area :body, class: 'form-control shadow-sm border-secondary' %>
+    </div>
+
     <div class="actions">
-      <%= f.submit t('buttons.send'), class: 'btn btn-primary' %>
+      <%= f.submit t('buttons.send'), class: 'btn btn-primary shadow-sm rounded-pill float-end' %>
     </div>
 <% end %>

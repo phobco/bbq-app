@@ -1,7 +1,9 @@
+<div class="d-grid gap-2 d-md-flex justify-content-md-center mb-2">
 <%- if controller_name != 'sessions' %>
-  <%= link_to t('buttons.sign_in'), new_session_path(resource_name) %><br />
+  <%= link_to t('buttons.sign_in'), new_session_path(resource_name), class: 'link-secondary' %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to t('buttons.forgot_password'), new_password_path(resource_name) %><br />
+  <%= link_to t('buttons.forgot_password'), new_password_path(resource_name), class: 'link-secondary' %><br />
 <% end %>
+</div>

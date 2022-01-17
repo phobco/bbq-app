@@ -1,36 +1,39 @@
-<h2><%= t('titles.sign_up') %></h2>
+<div class="row justify-content-md-center rounded-top mt-5">
+  <h3 class="card-header col-md-4 border bg-light"><%= t('titles.sign_up') %></h2>
+</div>
 
-<div class="col-md-6">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "users/shared/error_messages", resource: resource %>
+<div class="row justify-content-md-center">
+  <div class="col-md-4 border rounded-bottom shadow mb-3 pt-2">
 
-    <div class="mb-3">
-      <%= f.label :email, class: 'form-label' %>
-      <%= f.email_field :email, class: 'form-control' %>
-    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-    <div class="mb-3">
-      <%= f.label :name, class: 'form-label' %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
+      <div class="mb-3">
+        <%= f.label :email, class: 'form-label fw-bolder' %>
+        <%= f.email_field :email, placeholder: 'Введите e-mail', autofocus: true, class: 'form-control shadow-sm' %>
+      </div>
 
-    <div class="mb-3">
-      <%= f.label :password, class: 'form-label' %>
-      <%= f.password_field :password, class: 'form-control' %>
-      <% if @minimum_password_length %>
-        <em><%= t('text.password_length', length: @minimum_password_length) %></em>
-      <% end %>
-    </div>
+      <div class="mb-3">
+        <%= f.label :name, class: 'form-label fw-bolder' %>
+        <%= f.text_field :name, placeholder: 'Введите имя', class: 'form-control shadow-sm' %>
+      </div>
 
-    <div class="mb-3">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
+      <div class="mb-3">
+        <%= f.label :password, class: 'form-label' %>
+        <%= f.password_field :password, class: 'form-control shadow-sm' %>
+        <% if @minimum_password_length %>
+          <em><%= t('text.password_length', length: @minimum_password_length) %></em>
+        <% end %>
+      </div>
 
-    <div class="mb-3">
-      <%= f.submit t('buttons.sign_up'), class: 'btn btn-primary' %>
-    </div>
-  <% end %>
+      <div class="mb-3">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: 'form-control shadow-sm' %>
+      </div>
 
-  <%= render "users/shared/links" %>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2 mt-4">
+        <%= f.submit t('buttons.sign_up'), class: 'btn btn-primary rounded-pill shadow-sm' %>
+      </div>
+    <% end %>
+  </div>
 </div>

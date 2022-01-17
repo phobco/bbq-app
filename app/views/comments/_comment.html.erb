@@ -3,7 +3,7 @@
   <i class="fa fa-commenting"></i>
   <% if comment.user.present? %>
   <a href="<%= user_path(comment.user) %>" class="p-1 link-dark">
-    <strong><%= "@#{comment.user_name}" %></strong>
+    <strong><%= comment.user_name %></strong>
     <i class="fa fa-check-circle" style="font-size: 20px; color: Dodgerblue;"></i>
   </a>
   <% else %>

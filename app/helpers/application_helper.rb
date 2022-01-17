@@ -17,7 +17,7 @@ module ApplicationHelper
     if photos.any?
       photos.sample.photo.url
     else
-      asset_path('event.jpg')
+      asset_path('bg.jpg')
     end
   end
 
@@ -39,7 +39,7 @@ module ApplicationHelper
     end
   end
 
-  def fa_icon(icon_class)
-    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  def fa_icon(icon)
+    content_tag 'span', '', class: "fa fa-#{icon[:class]}", style: "color: #{icon[:color]};"
   end
 end

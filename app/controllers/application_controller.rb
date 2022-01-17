@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
 
-  rescue_from Pundit::NotAuthorizedError, with: :redirect_back
+  rescue_from Pundit::NotAuthorizedError, with: :no_access
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   
@@ -19,9 +19,14 @@ class ApplicationController < ActionController::Base
     )
   end
 
+  def pundit_user
+    UserContext.new(current_user, cookies)
+  end
+
   private
 
-  def redirect_back
-    redirect_to :back
+  def no_access
+    flash[:alert] = t('pundit.no_access')
+    redirect_to(request.referrer || root_path)
   end
 end

@@ -34,17 +34,17 @@
               <% if user_signed_in? %>
                 <div class="dropdown">
                   <a class="nav-link active shadow-sm rounded border-bottom dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= image_tag user_avatar_thumb(current_user), class: 'img-menu' %>
                     <%= current_user.name %>
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <ul class="dropdown-menu dropdown-sm" aria-labelledby="dropdownMenuLink">
                     <li><%= link_to 'Профиль', current_user, class: 'dropdown-item' %></li>
-                    <li><hr class="dropdown-divider"></li>
                     <li><%= link_to t('buttons.log_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
                   </ul>
                 </div>
               <% else %>
-                <li class="nav-item"><%= link_to t('buttons.sign_in'), new_user_session_path, class: 'nav-link active' %></li>
-                <li class="nav-item"><%= link_to t('buttons.sign_up'), new_user_registration_path, class: 'btn btn-outline-primary rounded-pill' %></li>
+                <li class="nav-item"><%= link_to t('buttons.sign_in'), new_user_session_path, class: 'nav-link active fw-light' %></li>
+                <li class="nav-item"><%= link_to t('buttons.sign_up'), new_user_registration_path, class: 'btn btn-outline-primary rounded-pill fw-light' %></li>
               <% end %>
             </ul>
           </div>

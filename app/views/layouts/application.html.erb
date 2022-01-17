@@ -37,7 +37,7 @@
                     <%= image_tag user_avatar_thumb(current_user), class: 'img-menu' %>
                     <%= current_user.name %>
                   </a>
-                  <ul class="dropdown-menu dropdown-sm" aria-labelledby="dropdownMenuLink">
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-sm" aria-labelledby="dropdownMenuLink">
                     <li><%= link_to 'Профиль', current_user, class: 'dropdown-item' %></li>
                     <li><%= link_to t('buttons.log_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
                   </ul>

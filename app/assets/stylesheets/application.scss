@@ -21,6 +21,9 @@ html {
   margin-bottom: 20px;
 }
 
+.dropdown-sm {
+  min-width: 7.5rem;
+}
 /* Avatars for users & events */
 .avatar {
   border-radius: 100%;
@@ -41,6 +44,11 @@ html {
 .user-avatar .img-icon {
   margin-top: -2px;
   height: 20px;
+}
+
+.img-menu {
+  height: 25px;
+  border-radius: 50%;
 }
 
 /* Thumbnails for events/index */

@@ -3,25 +3,25 @@ ru:
     attributes:
       user:
         avatar: 'Аватар'
-        email: Email
-        name: Имя
-        new_password: Новый пароль
-        new_password_confirmation: Подтвердите новый пароль
-        password: Пароль
-        password_confirmation: Подтверждение пароля
+        email: 'Email:'
+        name: 'Имя:'
+        new_password: 'Новый пароль:'
+        new_password_confirmation: 'Подтвердите новый пароль:'
+        password: 'Пароль:'
+        password_confirmation: 'Подтверждение пароля:'
       comment:
-        body: Комментарий
-        user_name: Имя пользователя
+        body: 'Комментарий:'
+        user_name: 'Имя пользователя:'
       subscription:
-        user_name: Имя пользователя
-        user_email: Email
+        user_name: 'Имя пользователя:'
+        user_email: 'Email:'
       photo:
         photo: 'Фотография'
       event:
-        address: Место проведения
-        datetime: Дата и время
-        description: Описание
-        title: Название
+        address: 'Место проведения:'
+        datetime: 'Дата и время:'
+        description: 'Описание:'
+        title: 'Название:'
     models:
       event: Событие
       user: Пользователь
@@ -37,6 +37,7 @@ ru:
 
   app:
     company: Хороший программист
+    creator: 'Автор проекта:'
     name: Шашлыки
 
   account:
@@ -87,20 +88,29 @@ ru:
   events:
     show:
       are_you_sure: Вы уверены, что хотите удалить это мероприятие?
+      add_photo: Добавить фото
+      comments: 'Комментарии (%{count}):'
+      close: Закрыть
+      load_photo: 'Загрузить фото:'
+      no_comments_yet: Комментариев пока нет.
+      no_photo_yet: Фотографий пока нет.
+      only_authorized_users: Добавлять фото могут только зарегистрированные пользователи.
+      show_on_map: Показать на карте
 
   photos:
     photo:
       are_you_sure: Вы уверены, что хотите удалить эту фотографию?
       add: 'Добавил:'
+      choose_file: Выберите файл
+
+  pundit:
+    no_access: Нет доступа
 
   subscriptions:
+    form:
+      subscribe: Подписаться
     subscription:
       are_you_sure: Вы уверены, что хотите отменить подписку?
-
-  errors:
-    one: 'В вашей форме %{count} ошибка'
-    few: 'В вашей форме %{count} ошибки'
-    many: 'В вашей форме %{count} ошибок'
 
   text:
     leave_empty: (оставьте пустым, если не хотите менять)
@@ -110,6 +120,7 @@ ru:
     pincode: Пин-код
     to_main: На главную
     waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
+    message: 'Сообщение:'
 
   titles:
     account_delete: Удаление аккаунта
@@ -118,15 +129,15 @@ ru:
     events: События
     event_create: Создание события
     event_edit: Редактирование события
-    event_creator: 'Зовёт:'
-    event_subscribers: 'Пойдут:'
+    event_creator: 'Организатор:'
+    event_subscribers: 'Пойдут (%{count}):'
     forgot_password: Забыли пароль?
     join: 'Я пойду:'
     organized: Организовал
     password_edit: Изменение пароля
     pincode_access: Доступ только по пин-коду
-    sign_up: Регистрация
-    sign_in: Войти
+    sign_up: 'Регистрация:'
+    sign_in: 'Войти:'
 
   event_mailer:
     comment:

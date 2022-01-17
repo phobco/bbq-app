@@ -3,6 +3,10 @@
 @import 'lightbox';
 
 
+html {
+  height: 100%;
+}
+
 /* Buffers */
 .buffer-top {
   margin-top: 20px;
@@ -23,8 +27,13 @@
   max-width: 300px;
 }
 
+.avatar-event {
+  border-radius: 100%;
+  width: 190px;
+}
+
 .img-icon, .img-icon-small {
-  height: 50px;
+  height: 70px;
   width: auto;
   border-radius: 50%;
 }
@@ -51,5 +60,5 @@
 }
 
 .thumbnail-inner {
-  padding: 20px 4px 4px;
+  padding: 10px 4px 4px;
 }

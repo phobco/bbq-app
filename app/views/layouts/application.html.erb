@@ -5,64 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><%= content_for?(:title) ? yield(:title) : t('app.name') %></title>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+
     <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= Rails.application.credentials.dig(:maps, :api_key) %>&lang=ru_RU" type="text/javascript"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    
-    <div class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to t('buttons.profile'), current_user, class: 'nav-link active' %></li>
-              <li class="nav-item"><%= link_to t('buttons.log_out'), destroy_user_session_path, method: :delete, class: 'nav-link active' %></li>
-            <% else %>
-              <li class="nav-item"><%= link_to t('buttons.sign_in'), new_user_session_path, class: 'nav-link active' %></li>
-              <li class="nav-item"><%= link_to t('buttons.sign_up'), new_user_registration_path, class: 'nav-link active' %></li>
-            <% end %>
-          </ul>
+  <body class="d-flex flex-column h-100">
+    <div class="container p-0">
+      <div class="navbar navbar-expand-lg navbar-light bg-light rounded-bottom shadow-sm bg-gradient">
+        <div class="container">  
+          <%= image_tag asset_path('bbq.png'), alt: 'logo', width: '35', height: '35' %>
+          <%= link_to t('app.name'), root_path, class: 'navbar-brand fw-bolder' %>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            
+              <% if user_signed_in? %>
+                <div class="dropdown">
+                  <a class="nav-link active shadow-sm rounded border-bottom dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= current_user.name %>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><%= link_to 'Профиль', current_user, class: 'dropdown-item' %></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><%= link_to t('buttons.log_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item' %></li>
+                  </ul>
+                </div>
+              <% else %>
+                <li class="nav-item"><%= link_to t('buttons.sign_in'), new_user_session_path, class: 'nav-link active' %></li>
+                <li class="nav-item"><%= link_to t('buttons.sign_up'), new_user_registration_path, class: 'btn btn-outline-primary rounded-pill' %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    
+      <div class="container mt-3">
 
-    <div class="container mt-3">
+        <% if flash.any? %>
+            <% flash.each do |name, message| %>
+              <div class="row alert alert-<%= flash_class_name(name) %> alert-dismissible fade show" role="alert">
+                <%= message %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <% end %>
+        <% end %>
 
-       <% if flash.any? %>
-          <% flash.each do |name, message| %>
-            <div class="alert alert-<%= flash_class_name(name) %> alert-dismissible fade show" role="alert">
-              <%= message %>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-          <% end %>
-      <% end %>
-
-      <div class="row">
-        <div class="col-lg-10">
+        <div>
           <%= yield %>
         </div>
-        <div class="col-lg-2">   
-        </div>
       </div>
-
-      <footer>
-        <p>&copy; <%= t('app.company') %> 2021</p>
-      </footer>
-
     </div>
   </body>
+
+  <footer class="container mt-auto d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mb-0">
+  
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="https://goodprogrammer.ru/"><span class="text-muted">&copy; <%= t('app.company') %> 2021 — 2022</span></a>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><span class="text-muted"><%= t('app.creator') %></span></li>
+      <li class="ms-3"><a class="text-muted" href="https://github.com/phobco"><img src="<%= asset_path('gh.png') %>" class="bi" width="30" height="30"></a></li>
+    </ul>
+  
+  </footer>
 </html>

@@ -22,6 +22,7 @@ ru:
         datetime: 'Дата и время:'
         description: 'Описание:'
         title: 'Название:'
+        pincode: Пин-код
     models:
       event: Событие
       user: Пользователь
@@ -86,6 +87,8 @@ ru:
       are_you_sure: Вы уверены, что хотите удалить этот комменатрий?
 
   events:
+    form:
+      email_notifications: e-mail уведомления
     show:
       are_you_sure: Вы уверены, что хотите удалить это мероприятие?
       add_photo: Добавить фото

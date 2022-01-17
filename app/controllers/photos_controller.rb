@@ -43,6 +43,8 @@ class PhotosController < ApplicationController
   end
 
   def notify_subscribers(event, photo)
+    return if @event.notifications == false
+
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
 
     all_emails.each do |mail|

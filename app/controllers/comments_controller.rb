@@ -42,6 +42,8 @@ class CommentsController < ApplicationController
   end
 
   def notify_subscribers(event, comment)
+    return if @event.notifications == false
+
     all_emails = 
       (event.subscriptions.map(&:user_email) + [event.user.email]).uniq - [comment&.user&.email]
 

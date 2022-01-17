@@ -8,7 +8,7 @@ class SubscriptionsController < ApplicationController
 
 
     if @new_subscription.save
-      EventMailer.subscription(@event, @new_subscription).deliver_now
+      notify_subscribers(@event, @new_subscription)
 
       redirect_to @event, notice: t('controllers.subscriptions.created')
     else
@@ -40,5 +40,11 @@ class SubscriptionsController < ApplicationController
 
   def subscription_params
     params.fetch(:subscription, {}).permit(:user_email, :user_name)
+  end
+
+  def notify_subscribers(event, subscription)
+    return if @event.notifications == false
+
+    EventMailer.subscription(event, subscription).deliver_now
   end
 end

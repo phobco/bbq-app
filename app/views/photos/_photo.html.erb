@@ -1,7 +1,7 @@
 <% image_title = "#{t('.add')} #{render partial: 'users/user', object: photo.user}" %>
 
 <% if current_user_can_edit?(photo) %>
-  <% delete_icon = link_to(fa_icon(class: 'trash'), event_photo_path(photo.event, photo), method: :delete, data: {confirm: t('.are_you_sure')}) %>
+  <% delete_icon = link_to(fa_icon(class: 'trash', color: 'Tomato'), event_photo_path(photo.event, photo), method: :delete, data: {confirm: t('.are_you_sure')}) %>
   <% image_title << delete_icon %>
 <% end %>
 

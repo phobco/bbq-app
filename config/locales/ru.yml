@@ -129,9 +129,10 @@ ru:
     account_delete: Удаление аккаунта
     account_edit: Редактирование профиля
     change_password: Смена пароля
-    events: События
+    events_all: 'Все события:'
     event_create: Создание события
     event_edit: Редактирование события
+    events_sample: Случайные события
     event_photos: 'Фото события (%{count}):'
     event_creator: 'Организатор:'
     event_subscribers: 'Пойдут (%{count}):'

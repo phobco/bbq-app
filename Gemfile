@@ -25,6 +25,8 @@ gem 'mailjet'
 
 gem 'pundit'
 
+gem 'where_exists'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'

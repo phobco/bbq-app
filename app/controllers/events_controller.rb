@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @photos = Event.where_exists(:photos).map { |e| e.photos.sample }
   end
 
   def show

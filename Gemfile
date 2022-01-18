@@ -12,7 +12,6 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
 gem 'jbuilder', '~> 2.7'
 gem 'uglifier'
-gem 'factory_bot'
 
 gem 'devise'
 gem 'devise-i18n'
@@ -24,12 +23,12 @@ gem 'fog-aws'
 gem 'mailjet'
 
 gem 'pundit'
-
 gem 'where_exists'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
+  gem 'factory_bot_rails'
 end
 
 group :development do

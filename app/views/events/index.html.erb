@@ -1,8 +1,17 @@
-<h1 class="fw-light"><%= t('titles.events')%></h1>
+<% unless @photos.empty? %>
+  <h1 class="fw-light text-dark text-center my-4"><%= t('titles.events_sample')%></h1>
 
-<div class="buffer-both">
-  <%= link_to t('buttons.event_create'), new_event_path, class: 'btn btn-success rounded-pill' %>
-</div>
+  <div class="event-photos-gallery shadow">       
+        <!-- Carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <%= render partial: 'photos/collection', collection: @photos.sample(5), as: :photo %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<h1 class="fw-light text-dark text-center my-4 border-top pt-2"><%= t('titles.events_all')%></h1>
 
 <div class="row text-center">
   <%= render partial: 'events/event', collection: @events %>

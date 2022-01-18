@@ -77,8 +77,6 @@
               </button>
             </div>
           </div>
-        <% else %>
-          <h5 class="text-center my-5 text-secondary"><%= t('.no_photo_yet') %></h5>
         <% end %>
         
         <div class="d-flex justify-content-center">
@@ -137,6 +135,8 @@
             </div>
           </div>
         </div>
+      <% else %>
+        <em><p class="text-center text-secondary my-3">Тут будут участники.</p></em>
       <% end %>
 
       <% unless @event.user == current_user || @event.subscribers.include?(current_user) %>

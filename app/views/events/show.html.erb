@@ -4,7 +4,7 @@
       <%= content_tag 'div', '', class: 'event-background',
         style: "background-image: url(#{event_photo(@event)})" %>
       <div class="row event-banner">
-        <div class="col-md-8 px-4 py-3 border-end border-3 border-white">
+        <div class="col-md-8 px-4 py-3">
           <div class="event-description">
             <h1 class="text-center fw-light"><%= @event.title %></h1>
             <h3 class="fw-lighter"><%= l(@event.datetime, format: :short) %></h3>

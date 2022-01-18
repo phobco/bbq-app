@@ -61,6 +61,7 @@
     <div class="col-md-8">
       <div class="event-photos">
         <% unless @event.photos.count.zero? %>
+          <h3 class="fw-light mb-3"><%= t('titles.event_photos', count: @event.photos.count) %></h3>
           <div class="event-photos-gallery shadow">
                 
                 <!-- Carousel -->

@@ -4,6 +4,6 @@
   <%= link_to t('buttons.event_create'), new_event_path, class: 'btn btn-success rounded-pill' %>
 </div>
 
-<div class="row">
+<div class="row text-center">
   <%= render partial: 'events/event', collection: @events %>
 </div>

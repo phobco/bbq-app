@@ -132,6 +132,7 @@ ru:
     events: События
     event_create: Создание события
     event_edit: Редактирование события
+    event_photos: 'Фото события (%{count}):'
     event_creator: 'Организатор:'
     event_subscribers: 'Пойдут (%{count}):'
     forgot_password: Забыли пароль?

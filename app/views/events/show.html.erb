@@ -131,7 +131,7 @@
           <div>
             <div class="row row-cols-auto">
             <%= render partial: 'subscriptions/subscription',
-              collection: @event.subscriptions.except(@new_subscription) %>
+              collection: @event.subscriptions.except(@new_subscription).shuffle %>
             </div>
           </div>
         </div>

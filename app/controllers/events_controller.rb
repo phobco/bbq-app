@@ -63,6 +63,8 @@ class EventsController < ApplicationController
     unless policy(@event).show?
       flash.now[:alert] = t('controllers.events.wrong_pincode') if params[:pincode].present?
       render 'password_form'
+    else
+      super
     end
   end
 

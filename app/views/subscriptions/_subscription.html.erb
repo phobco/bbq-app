@@ -4,7 +4,7 @@
     <% if subscription.user.present? %>
       <%= render partial: 'users/user', object: subscription.user %>
     <% else %>
-      <em><%= subscription.user_name %></em>
+      <span class="user-name border rounded-pill fs-5 text-secondary shadow-sm p-1"><%= subscription.user_name %></span>
     <% end %>
     <% if current_user_can_edit?(subscription) %>
       <%= link_to(

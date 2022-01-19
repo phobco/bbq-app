@@ -114,7 +114,7 @@
           <h3 class="fw-light"><%= t('.comments', count: @event.comments.count) %></h3>
           <div class="buffer-both">
             <%= render partial: 'comments/comment',
-              collection: @event.comments.except(@new_comment).order(created_at: :desc) %>
+              collection: @event.comments.except(@new_comment).order(created_at: :asc) %>
           </div>
         <% else %>
           <em><h6 class="text-center my-5 text-secondary"><%= t('.no_comments_yet') %></h6></em>

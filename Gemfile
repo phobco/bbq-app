@@ -38,6 +38,7 @@ group :development do
   gem 'capistrano-bundler',   require: false
   gem 'capistrano-passenger', require: false
 
+  gem "letter_opener"
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
 end

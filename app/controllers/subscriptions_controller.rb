@@ -45,6 +45,6 @@ class SubscriptionsController < ApplicationController
   def notify_subscribers(event, subscription)
     return if @event.notifications == false
 
-    EventMailer.subscription(event, subscription).deliver_now
+    EventMailer.subscription(event, subscription).deliver_later
   end
 end

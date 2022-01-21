@@ -1,6 +1,9 @@
-<h2><%= t('titles.change_password') %></h2>
+<div class="row justify-content-md-center rounded-top mt-5">
+  <h3 class="card-header col-md-4 border bg-light"><%= t('titles.change_password') %></h2>
+</div>
 
-<div class="col-md-5">
+<div class="row justify-content-md-center">
+  <div class="col-md-4 border rounded-bottom shadow mb-3 pt-2">
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
     <%= f.hidden_field :reset_password_token %>
@@ -10,18 +13,20 @@
       <% if @minimum_password_length %>
         <em><%= t('text.password_length', length: @minimum_password_length) %></em>
       <% end %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control shadow-sm' %>
     </div>
 
     <div class="mb-3">
       <%= f.label :new_password_confirmation, class: 'form-label' %><br />
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control shadow-sm' %>
     </div>
 
-    <div class="mb-3">
-      <%= f.submit t('buttons.save'), class: 'btn btn-primary' %>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-1">
+      <%= f.submit t('buttons.save'), class: 'btn btn-primary shadow-sm rounded-pil' %>
     </div>
   <% end %>
 
   <%= render "users/shared/links" %>
+  </div>
 </div>
+

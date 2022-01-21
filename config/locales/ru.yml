@@ -124,6 +124,10 @@ ru:
     to_main: На главную
     waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
     message: 'Сообщение:'
+    enter_email: Введите e-mail
+    enter_name: Введите имя
+    enter_password: Введите пароль
+    load_avatar: Загрузить аватар
 
   titles:
     account_delete: Удаление аккаунта

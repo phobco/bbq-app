@@ -10,12 +10,12 @@
 
       <div class="mb-3">
         <%= f.label :email, class: 'form-label fw-bolder' %>
-        <%= f.email_field :email, placeholder: 'Введите e-mail', autofocus: true, class: 'form-control shadow-sm' %>
+        <%= f.email_field :email, placeholder: t('text.enter_email'), autofocus: true, class: 'form-control shadow-sm' %>
       </div>
 
       <div class="mb-3">
         <%= f.label :name, class: 'form-label fw-bolder' %>
-        <%= f.text_field :name, placeholder: 'Введите имя', class: 'form-control shadow-sm' %>
+        <%= f.text_field :name, placeholder: t('text.enter_name'), class: 'form-control shadow-sm' %>
       </div>
 
       <div class="mb-3">

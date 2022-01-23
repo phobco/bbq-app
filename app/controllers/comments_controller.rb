@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      EventEmailNotificationJob.perform_later(@new_comment, :comment) unless @event.notifications == false
+      EventEmailNotificationJob.perform_later(@new_comment) unless @event.notifications == false
 
       redirect_to @event, notice: t('controllers.comments.created')
     else

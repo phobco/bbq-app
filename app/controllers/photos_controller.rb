@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      EventEmailNotificationJob.perform_later(@new_photo, :photo) unless @event.notifications == false
+      EventEmailNotificationJob.perform_later(@new_photo) unless @event.notifications == false
 
       redirect_to @event, notice: t('controllers.photos.created')
     else

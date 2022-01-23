@@ -14,7 +14,12 @@ class EventsController < ApplicationController
       cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
 
-    authorize @event
+    begin
+      authorize @event
+    rescue Pundit::NotAuthorizedError
+      flash.now[:alert] = t('controllers.events.wrong_pincode') if params[:pincode].present?
+      render 'password_form'
+    end
 
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
@@ -58,15 +63,6 @@ class EventsController < ApplicationController
   end
 
   private
-
-  def no_access
-    unless policy(@event).show?
-      flash.now[:alert] = t('controllers.events.wrong_pincode') if params[:pincode].present?
-      render 'password_form'
-    else
-      super
-    end
-  end
 
   def set_event
     @event = Event.find(params[:id])

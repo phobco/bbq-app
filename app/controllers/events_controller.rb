@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   after_action :verify_authorized, only: %i[show edit update destroy]
 
   def index
-    @events = Event.all.shuffle
+    @events = Event.randomize
     @photos = Event.where_exists(:photos).map { |e| e.photos.sample }
   end
 

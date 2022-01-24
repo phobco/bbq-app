@@ -82,6 +82,11 @@ ru:
       created: 'Вы добавили фотографию к событию'
       destroyed: 'Вы удалили фотку'
 
+  devise:
+    omniauth_callbacks:
+        failure: Вы не можете войти в систему с учетной записью из %{kind}, т.к. "%{reason}".
+        success: Вход в систему выполнен с учетной записью из %{kind}.
+
   comments:
     comment:
       are_you_sure: Вы уверены, что хотите удалить этот комменатрий?
@@ -116,18 +121,20 @@ ru:
       are_you_sure: Вы уверены, что хотите отменить подписку?
 
   text:
-    leave_empty: (оставьте пустым, если не хотите менять)
-    no_events: Пользователь пока не организовал ни одного события
-    or: или
-    password_length: 'Не менее %{length} символов'
-    pincode: Пин-код
-    to_main: На главную
-    waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
-    message: 'Сообщение:'
     enter_email: Введите e-mail
     enter_name: Введите имя
     enter_password: Введите пароль
     load_avatar: Загрузить аватар
+    leave_empty: (оставьте пустым, если не хотите менять)
+    linked_accounts: 'Связанные аккаунты:'
+    message: 'Сообщение:'
+    no_events: Пользователь пока не организовал ни одного события
+    or: или
+    password_length: 'Не менее %{length} символов'
+    pincode: Пин-код
+    privacy_policy: Политика конфиденциальности
+    to_main: На главную
+    waiting_confirmation: 'В настоящее время ожидает подтверждения для: %{email}'
 
   titles:
     account_delete: Удаление аккаунта

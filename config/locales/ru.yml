@@ -107,6 +107,31 @@ ru:
       only_authorized_users: Добавлять фото могут только зарегистрированные пользователи.
       show_on_map: Показать на карте
 
+  event_mailer:
+    comment:
+      title: Новый комментарий
+      author: Автор
+      event: Событие
+      datetime: Дата
+      owner: Организатор
+      subject: 'Новый комментарий @ %{event}'
+    subscription:
+      title: Новая подписка
+      name: Имя
+      email: Email
+      author: Автор
+      event: Событие
+      datetime: Дата
+      owner: Организатор
+      subject: 'Новая подписка на %{event}'
+    photo:
+      title: Новая фотография
+      author: Автор
+      event: Событие
+      datetime: Дата
+      owner: Организатор
+      subject: 'Новая фотография %{event}'
+
   photos:
     photo:
       are_you_sure: Вы уверены, что хотите удалить эту фотографию?
@@ -156,29 +181,3 @@ ru:
     pincode_access: Доступ только по пин-коду
     sign_up: 'Регистрация:'
     sign_in: 'Войти:'
-
-  event_mailer:
-    comment:
-      title: Новый комментарий
-      author: Автор
-      event: Событие
-      datetime: Дата
-      owner: Организатор
-      subject: 'Новый комментарий @ %{event}'
-    subscription:
-      title: Новая подписка
-      name: Имя
-      email: Email
-      author: Автор
-      event: Событие
-      datetime: Дата
-      owner: Организатор
-      subject: 'Новая подписка на %{event}'
-    photo:
-      title: Новая фотография
-      author: Автор
-      event: Событие
-      datetime: Дата
-      owner: Организатор
-      subject: 'Новая фотография %{event}'
-      

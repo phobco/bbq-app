@@ -31,7 +31,7 @@ class User < ApplicationRecord
       Identity.find_or_create_by(provider: provider, uid: uid, user: user).user
     end
 
-    def self.create_oauth_user(access_token, name, avatar)
+    def create_oauth_user(access_token, name, avatar)
       create(
         name: name.first(14),
         email: access_token.info.email,

@@ -1,4 +1,46 @@
 class User < ApplicationRecord
+  class << self
+    def find_for_oauth(provider, access_token)
+      find_or_create_user(access_token, provider)
+    end
+
+    private
+
+    def find_or_create_user(access_token, provider)
+      email = access_token.info.email
+      return nil if email.blank?
+
+      name =
+        case provider
+        when :github   then access_token.info.nickname
+        when :facebook then access_token.info.name
+        else access_token.info.first_name
+        end
+
+      avatar =
+        case provider
+        when :vkontakte then access_token.extra.raw_info.photo_400_orig
+        else access_token.info.image
+        end
+
+      user = find_by(email: email) || create_oauth_user(access_token, name, avatar)
+
+      provider = access_token.provider
+      uid = access_token.uid
+
+      Identity.find_or_create_by(provider: provider, uid: uid, user: user).user
+    end
+
+    def self.create_oauth_user(access_token, name, avatar)
+      create(
+        name: name.first(14),
+        email: access_token.info.email,
+        password: Devise.friendly_token.first(16),
+        remote_avatar_url: avatar
+      )
+    end
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[google_oauth2 facebook vkontakte github]
@@ -14,56 +56,6 @@ class User < ApplicationRecord
   after_commit :link_subscriptions, on: :create
 
   mount_uploader :avatar, AvatarUploader
-
-  def self.find_for_vkontakte_oauth(access_token)
-    find_or_create_user(access_token, :vkontakte)
-  end
-
-  def self.find_for_github_oauth(access_token)
-    find_or_create_user(access_token, :github)
-  end
-
-  def self.find_for_google_oauth2_oauth(access_token)
-    find_or_create_user(access_token, :google)
-  end
-
-  def self.find_for_facebook_oauth(access_token)
-    find_or_create_user(access_token, :facebook)
-  end
-
-  def self.find_or_create_user(access_token, provider)
-    email = access_token.info.email
-    return :email_missing if email.blank?
-
-    name =
-      case provider
-      when :github   then access_token.info.nickname
-      when :facebook then access_token.info.name
-      else access_token.info.first_name
-      end
-
-    avatar =
-      case provider
-      when :vkontakte then access_token.extra.raw_info.photo_400_orig
-      else access_token.info.image
-      end
-
-    user = find_by(email: email) || create_user(access_token, name, avatar)
-
-    provider = access_token.provider
-    uid = access_token.uid
-
-    Identity.find_or_create_by(provider: provider, uid: uid, user: user).user
-  end
-
-  def self.create_user(access_token, name, avatar)
-    User.create(
-      name: name.first(14),
-      email: access_token.info.email,
-      password: Devise.friendly_token.first(16),
-      remote_avatar_url: avatar
-    )
-  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later

@@ -31,8 +31,12 @@
         <%= f.password_field :password_confirmation, class: 'form-control shadow-sm' %>
       </div>
 
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2 mt-4">
+      <div class="d-grid gap-2 mb-2 mt-4">
         <%= f.submit t('buttons.sign_up'), class: 'btn btn-primary rounded-pill shadow-sm' %>
+      </div>
+
+      <div class="text-center mb-2">
+        <%= link_to t('buttons.sign_in'), new_user_session_url, class: 'link-secondary' %>
       </div>
     <% end %>
   </div>

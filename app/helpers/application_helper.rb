@@ -42,4 +42,8 @@ module ApplicationHelper
   def fa_icon(icon)
     content_tag 'span', '', class: "fa fa-#{icon[:class]}", style: "color: #{icon[:color]};"
   end
+
+  def oauth_logo(provider)
+    asset_path("#{provider}.png")
+  end
 end

@@ -279,7 +279,8 @@ Devise.setup do |config|
 
   config.omniauth :github,
                   Rails.application.credentials.dig(:oauth, :github_client_id),
-                  Rails.application.credentials.dig(:oauth, :github_secret_key)
+                  Rails.application.credentials.dig(:oauth, :github_secret_key),
+                  scope: 'user:email'
 
   config.omniauth :google_oauth2,
                   Rails.application.credentials.dig(:oauth, :google_oauth2_app_id),

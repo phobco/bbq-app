@@ -88,11 +88,6 @@ ru:
         email_missing: отсутствует email
         failure: Вы не можете войти в систему с учетной записью из %{kind}, т.к. "%{reason}".
         success: Вход в систему выполнен с учетной записью из %{kind}.
-    omniauth_providers:
-      facebook: Facebook
-      github: GitHub
-      google: Google
-      vkontakte: ВКонтакте
 
   comments:
     comment:

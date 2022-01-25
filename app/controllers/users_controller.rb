@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    end
+    @providers = User.find(params[:id]).identities.map(&:provider)
+  end
 
   def update
     if @user.update(user_params)

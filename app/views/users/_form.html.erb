@@ -11,6 +11,19 @@
     <%= f.text_field :email, class: 'form-control shadow-sm' %>
   </div>
 
+  <% unless @providers.empty? %>
+    <div class="row mb-3">
+      <div class="col-md-6">
+       <h6><%= t('text.linked_accounts')%></h6>
+      </div>
+      <div class="col-md-6">
+        <% @providers.each do |provider| %>
+          <%= image_tag(oauth_logo(provider), class: 'oauth-logo') %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="col-md-7 mb-3">
     <%= f.label :avatar, t('text.load_avatar'), class: 'btn btn-sm btn-secondary active' %>
     <%= f.file_field :avatar, class: 'visually-hidden' %>

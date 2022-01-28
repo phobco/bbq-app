@@ -1,4 +1,20 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[google_oauth2 facebook vkontakte github]
+
+  has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  has_many :identities, dependent: :destroy
+
+  validates :name, presence: true, length: { maximum: 14 }
+
+  after_commit :link_subscriptions, on: :create
+
+  mount_uploader :avatar, AvatarUploader
+
   class << self
     def find_for_oauth(provider, access_token)
       find_or_create_user(access_token, provider)
@@ -8,7 +24,7 @@ class User < ApplicationRecord
 
     def find_or_create_user(access_token, provider)
       email = access_token.info.email
-      return nil if email.blank?
+      return if email.blank?
 
       name =
         case provider
@@ -40,22 +56,6 @@ class User < ApplicationRecord
       )
     end
   end
-
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[google_oauth2 facebook vkontakte github]
-  
-  has_many :events, dependent: :destroy
-  has_many :comments, dependent: :destroy
-  has_many :subscriptions, dependent: :destroy
-  has_many :photos, dependent: :destroy
-  has_many :identities, dependent: :destroy
-
-  validates :name, presence: true, length: { maximum: 14 }
-
-  after_commit :link_subscriptions, on: :create
-
-  mount_uploader :avatar, AvatarUploader
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later

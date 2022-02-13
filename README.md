@@ -6,9 +6,11 @@
 
 An application where you can create events and meetings, subscribe to them, add photos, comments, mark a place on the map and receive email notifications.
 
-Quick registration via: `Facebook`, `Google`, `GitHub` and `VKontakte` avaliable.
+Quick registration via: `Facebook`, `Google`, `Github` and `VKontakte` avaliable.
 
 The location of the event is displayed in `Yandex.Maps`
+
+Images and photos are stored on [`Amazon S3`](https://aws.amazon.com/s3/) bucket.
 
 ### Gems used
 
@@ -29,3 +31,65 @@ The location of the event is displayed in `Yandex.Maps`
   - [`omniauth-github`](https://github.com/omniauth/omniauth-github)
   - [`omniauth-vkontakte`](https://github.com/mamantoha/omniauth-vkontakte)
 - ...
+
+### Installation
+
+1. Clone repo
+```
+$ git clone git@github.com:phobco/bbq.git
+$ cd bbq
+```
+
+2. Set up `config/database.yml.example` for your database and rename it
+```
+$ mv config/database.yml.example config/database.yml
+```
+
+3. Install gems
+```
+$ bundle
+```
+
+4. Create database and run migrations
+```
+$ rails db:create
+$ rails db:migrate
+```
+
+5. Generate `master.key` and credentials file
+```
+$ EDITOR=nano rails credentials:edit
+```
+
+**Optional for services** example of `credentials.yml.enc`
+```yml
+# AWS and Mailjet for production mode only
+aws:
+  s3_access_key_id:
+  s3_secret_access_key:
+  s3_region:
+  s3_bucket_name:
+mail:
+  default_mail:
+  mailjet_api_key:
+  mailjet_secret_key: 
+maps:
+  api_key:
+oauth:
+  vkontakte_app_id:
+  vkontakte_secret_key:
+  github_client_id:
+  github_secret_key:
+  google_oauth2_app_id:
+  google_oauth2_secret_key:
+  facebook_app_id:
+  facebook_secret_key:
+```
+
+`:aws` — [`Amazon S3`](https://aws.amazon.com/s3/)
+
+`:mail` — [`Mailjet`](https://www.mailjet.com/)
+
+`:maps` — [`Yandex.Maps API`](https://yandex.ru/dev/maps)
+
+`:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2) [`OAuth Facebook`](https://developers.facebook.com/)

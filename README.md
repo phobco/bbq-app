@@ -6,7 +6,7 @@
 
 An application where you can create events and meetings, subscribe to them, add photos, comments, mark a place on the map and receive email notifications.
 
-Quick registration via: `Facebook`, `Google`, `Github` and `VKontakte` avaliable.
+Quick registration via: `Facebook`, `Google`, `Github`, `VKontakte`
 
 The location of the event is displayed in `Yandex.Maps`
 

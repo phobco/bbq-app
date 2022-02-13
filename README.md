@@ -61,29 +61,29 @@ $ rails db:migrate
 $ EDITOR=nano rails credentials:edit
 ```
 
-**Optional for services** example of `credentials.yml.enc`
+Example of `credentials.yml.enc` (**Optional for services working**)
 ```yml
 # AWS and Mailjet for production mode only
 aws:
-  s3_access_key_id:
-  s3_secret_access_key:
-  s3_region:
-  s3_bucket_name:
+  s3_access_key_id: <value>
+  s3_secret_access_key: <value>
+  s3_region: <value>
+  s3_bucket_name: <value>
 mail:
-  default_mail:
-  mailjet_api_key:
-  mailjet_secret_key: 
+  default_mail: <value>
+  mailjet_api_key: <value>
+  mailjet_secret_key: <value>
 maps:
-  api_key:
+  api_key: <value>
 oauth:
-  vkontakte_app_id:
-  vkontakte_secret_key:
-  github_client_id:
-  github_secret_key:
-  google_oauth2_app_id:
-  google_oauth2_secret_key:
-  facebook_app_id:
-  facebook_secret_key:
+  vkontakte_app_id: <value>
+  vkontakte_secret_key: <value>
+  github_client_id: <value>
+  github_secret_key: <value>
+  google_oauth2_app_id: <value>
+  google_oauth2_secret_key: <value>
+  facebook_app_id: <value>
+  facebook_secret_key: <value>
 ```
 
 `:aws` — [`Amazon S3`](https://aws.amazon.com/s3/)
@@ -93,3 +93,16 @@ oauth:
 `:maps` — [`Yandex.Maps API`](https://yandex.ru/dev/maps)
 
 `:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2) [`OAuth Facebook`](https://developers.facebook.com/)
+
+6. Start sever
+```
+$ rails s
+```
+
+Open `localhost:3000` in browser.
+
+### Production links
+
+Deployed on VPS: [`phobco.ru`](https://phobco.ru/)
+
+Deployed on Heroku: [`bbq-phobco.herokuapp.com`](https://bbq-phobco.herokuapp.com/)

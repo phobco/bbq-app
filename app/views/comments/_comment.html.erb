@@ -2,18 +2,18 @@
   <h5 class="card-header bg-light">
   <i class="fa fa-commenting"></i>
   <% if comment.user.present? %>
-  <a href="<%= user_path(comment.user) %>" class="p-1 link-dark">
-    <strong><%= comment.user_name %></strong>
-    <i class="fa fa-check-circle" style="font-size: 20px; color: Dodgerblue;"></i>
-  </a>
+    <a href="<%= user_path(comment.user) %>" class="p-1 link-dark">
+      <strong><%= comment.user_name %></strong>
+      <i class="fa fa-check-circle" style="font-size: 20px; color: Dodgerblue;"></i>
+    </a>
   <% else %>
     <em><strong class="link-secondary"><%= comment.user_name %></strong></em>
   <% end %>
 
   <% if current_user_can_edit?(comment) %>
     <%= link_to(
-            fa_icon(class: 'trash-o float-end', color: 'Tomato'), event_comment_path(comment.event, comment),
-            method: :delete, data: { confirm: t('.are_you_sure') }
+          fa_icon(class: 'trash-o float-end', color: 'Tomato'), event_comment_path(comment.event, comment),
+          method: :delete, data: { confirm: t('.are_you_sure') }
         ) %>
   <% end %>  
    

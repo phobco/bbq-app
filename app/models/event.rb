@@ -13,7 +13,7 @@ class Event < ApplicationRecord
   scope :randomize, -> { order('random()') }
 
   def visitors
-    (subscribers + [user]).uniq
+    [user, *subscribers].uniq
   end
 
   def pincode_valid?(pin2chek)

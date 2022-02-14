@@ -1,5 +1,4 @@
-
-  <div class="col px-1 mb-2">
+<div class="col px-1 mb-2">
   <span class="subscription <%= 'border p-2 rounded-pill bg-light shadow' if subscription.user.present? %>">
     <% if subscription.user.present? %>
       <%= render partial: 'users/user', object: subscription.user %>
@@ -15,5 +14,4 @@
           ) %>
     <% end %>
   </span>
-  </div>
-
+</div>

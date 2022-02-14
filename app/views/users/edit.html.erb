@@ -1,4 +1,4 @@
-<h1 class="text-center fw-light"><%= t('titles.account_edit') %></h1>
+<%= content_tag(:h1, t('titles.account_edit'), class: 'text-center fw-light') %>
 
 <div class="row d-flex justify-content-center mt-5">
   <%= content_tag(:div, image_tag(user_avatar(@user), class: 'avatar shadow'), class: 'col-md-3 buffer-top') %>

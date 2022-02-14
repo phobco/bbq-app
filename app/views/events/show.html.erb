@@ -47,9 +47,7 @@
             <a href="<%= user_path(@event.user) %>" class="p-1 link-dark">
               <div>
                 <%= image_tag user_avatar(@event.user), class: 'avatar-event border border-3 border-white' %>
-                <div class="text-center mt-2">
-                  <strong class="fs-5 text-light fw-light"><%= @event.user.name %></strong>
-                </div>
+                <%= content_tag(:div, content_tag(:strong, @event.user.name, class: 'fs-5 text-light fw-light'), class: 'text-center mt-2') %>
               </div>
             </a>
           </div>
@@ -130,8 +128,8 @@
           <h3 class="mb-3"><%= t('titles.event_subscribers', count: @event.subscriptions.count) %></h3>
           <div>
             <div class="row row-cols-auto">
-            <%= render partial: 'subscriptions/subscription',
-              collection: @event.subscriptions.except(@new_subscription).shuffle %>
+              <%= render partial: 'subscriptions/subscription',
+                collection: @event.subscriptions.except(@new_subscription).shuffle %>
             </div>
           </div>
         </div>

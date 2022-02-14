@@ -9,10 +9,10 @@
         <div class="event-description">
           <h3 class="fw-light"><%= link_to event.title, event_path(event) %></h3>
           <h5 class="fw-lighter"><%= l(event.datetime, format: :short) %></h5>
-          <div class="buffer-both text-break"><%= event.address %></div>
+          <%= content_tag(:div, event.address, class: 'buffer-both text-break') %>
           <div>
             <% event.visitors.sample(5).each do |user| %>
-              <a href="<%= user_path(user) %>"><%= image_tag user_avatar_thumb(user), class: 'img-icon', title: user.name %></a>
+              <%= link_to(image_tag(user_avatar_thumb(user), class: 'img-icon', title: user.name), user_path(user)) %>
             <% end %>
           </div>
         </div>

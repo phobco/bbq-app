@@ -5,13 +5,13 @@
         <!-- Carousel -->
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner rounded">
-        <%= render partial: 'photos/collection', collection: @photos.sample(5), as: :photo %>
+        <%= render partial: 'photos/collection', collection: @photos, as: :photo %>
       </div>
     </div>
   </div>
 <% end %>
 
-<h1 class="fw-light text-dark text-center my-4 border-top pt-2"><%= t('titles.events_all')%></h1>
+<h2 class="fw-light fs-1 text-dark text-center my-4 border-top pt-2"><%= t('titles.events_all')%></h2>
 
 <div class="row text-center">
   <%= render partial: 'events/event', collection: @events %>

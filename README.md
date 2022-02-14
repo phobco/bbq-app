@@ -6,9 +6,11 @@
 
 An application where you can create events and meetings, subscribe to them, add photos, comments, mark a place on the map and receive email notifications.
 
-Quick registration via: `Facebook`, `Google`, `GitHub` and `VKontakte` avaliable.
+Quick registration via: `Facebook`, `Google`, `Github`, `VKontakte`
 
 The location of the event is displayed in `Yandex.Maps`
+
+Images and photos are stored on [`Amazon S3`](https://aws.amazon.com/s3/) bucket.
 
 ### Gems used
 
@@ -29,3 +31,78 @@ The location of the event is displayed in `Yandex.Maps`
   - [`omniauth-github`](https://github.com/omniauth/omniauth-github)
   - [`omniauth-vkontakte`](https://github.com/mamantoha/omniauth-vkontakte)
 - ...
+
+### Installation
+
+1. Clone repo
+```
+$ git clone git@github.com:phobco/bbq.git
+$ cd bbq
+```
+
+2. Set up `config/database.yml.example` for your database and rename it
+```
+$ mv config/database.yml.example config/database.yml
+```
+
+3. Install gems
+```
+$ bundle
+```
+
+4. Create database and run migrations
+```
+$ rails db:create
+$ rails db:migrate
+```
+
+5. Generate `master.key` and credentials file
+```
+$ EDITOR=nano rails credentials:edit
+```
+
+Example of `credentials.yml.enc` (**Optional for services working**)
+```yml
+# AWS and Mailjet for production mode only
+aws:
+  s3_access_key_id: <value>
+  s3_secret_access_key: <value>
+  s3_region: <value>
+  s3_bucket_name: <value>
+mail:
+  default_mail: <value>
+  mailjet_api_key: <value>
+  mailjet_secret_key: <value>
+maps:
+  api_key: <value>
+oauth:
+  vkontakte_app_id: <value>
+  vkontakte_secret_key: <value>
+  github_client_id: <value>
+  github_secret_key: <value>
+  google_oauth2_app_id: <value>
+  google_oauth2_secret_key: <value>
+  facebook_app_id: <value>
+  facebook_secret_key: <value>
+```
+
+`:aws` — [`Amazon S3`](https://aws.amazon.com/s3/)
+
+`:mail` — [`Mailjet`](https://www.mailjet.com/)
+
+`:maps` — [`Yandex.Maps API`](https://yandex.ru/dev/maps)
+
+`:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2) [`OAuth Facebook`](https://developers.facebook.com/)
+
+6. Start sever
+```
+$ rails s
+```
+
+Open `localhost:3000` in browser.
+
+### Production links
+
+Deployed on VPS: [`phobco.ru`](https://phobco.ru/)
+
+Deployed on Heroku: [`bbq-phobco.herokuapp.com`](https://bbq-phobco.herokuapp.com/)

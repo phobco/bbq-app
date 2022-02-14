@@ -1,6 +1,8 @@
-<div class="row justify-content-md-center rounded-top mt-5">
-  <h3 class="card-header col-md-4 border bg-light"><%= t('titles.change_password') %></h2>
-</div>
+<%= content_tag(
+      :div, content_tag(:h3, t('titles.change_password'),
+      class: 'card-header col-md-4 border bg-light'),
+      class: 'row justify-content-md-center rounded-top mt-5'
+      ) %>
 
 <div class="row justify-content-md-center">
   <div class="col-md-4 border rounded-bottom shadow mb-3 pt-2">

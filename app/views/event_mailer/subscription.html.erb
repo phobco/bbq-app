@@ -1,15 +1,13 @@
-<h1><%= t('.title') %></h1>
+<%= content_tag(:h1, t('.title')) %>
 <p><%= t('.name') %>: <strong><%= @name %></strong></p>
 <p><%= t('.email') %>: <strong><%= link_to @email, "mailto:#{@email}" %></strong></p>
-<hr/>
 
+<hr/>
 <%= t('.event') %>
-<h3>
-  <a href="<%= event_url(@event) %>"><%= @event.title %></a>
-</h3>
+<%= content_tag(:h3, content_tag(:a, @event.title, href: event_url(@event))) %>
 
 <%= t('.datetime') %>
-<h4><%= l(@event.datetime) %></h4>
+<%= content_tag(:h4, l(@event.datetime)) %>
 
 <%= t('.owner') %>
-<h4><%= @event.user.name %></h4>
+<%= content_tag(:h4, @event.user.name) %>

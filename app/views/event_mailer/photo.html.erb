@@ -1,16 +1,14 @@
-<h1><%= t('.title') %></h1>
-<img src="<%= @photo.photo.url %>" alt="Picture" width="300">
+<%= content_tag(:h1, t('.title')) %>
+<%= image_tag(@photo.photo.url, alt: t('.photo'), width: 300) %>
+
 <p><%= t('.author') %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
-
 <%= t('.event') %>
-<h3>
-  <a href="<%= event_url(@event) %>"><%= @event.title %></a>
-</h3>
+<%= content_tag(:h3, content_tag(:a, @event.title, href: event_url(@event))) %>
 
 <%= t('.datetime') %>
-<h4><%= l(@event.datetime) %></h4>
+<%= content_tag(:h4, l(@event.datetime)) %>
 
 <%= t('.owner') %>
-<h4><%= @event.user.name %></h4>
+<%= content_tag(:h4, @event.user.name) %>

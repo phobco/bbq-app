@@ -131,6 +131,7 @@ ru:
       datetime: Дата
       owner: Организатор
       subject: 'Новая фотография %{event}'
+      photo: Photo
 
   photos:
     photo:

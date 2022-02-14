@@ -1,5 +1,5 @@
 <% unless @photos.empty? %>
-  <h1 class="fw-light text-dark text-center my-4"><%= t('titles.events_sample')%></h1>
+  <%= content_tag(:h1, t('titles.events_sample'), class: 'fw-light text-dark text-center my-4') %>
 
   <div class="event-photos-gallery shadow">       
         <!-- Carousel -->
@@ -11,7 +11,7 @@
   </div>
 <% end %>
 
-<h2 class="fw-light fs-1 text-dark text-center my-4 border-top pt-2"><%= t('titles.events_all')%></h2>
+<%= content_tag(:h2, t('titles.events_all'), class: 'fw-light fs-1 text-dark text-center my-4 border-top pt-2') %>
 
 <div class="row text-center">
   <%= render partial: 'events/event', collection: @events %>

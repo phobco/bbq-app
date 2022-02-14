@@ -6,15 +6,13 @@
       <div class="row event-banner">
         <div class="col-md-8 px-4 py-3">
           <div class="event-description">
-            <h1 class="text-center fw-light"><%= @event.title %></h1>
-            <h3 class="fw-lighter"><%= l(@event.datetime, format: :short) %></h3>
-            <h3 class="fw-light" style="color: #0dcaf0">
-              <%= @event.address %>
-            </h3>
+            <%= content_tag(:h1, @event.title, class: 'text-center fw-light') %>
+            <%= content_tag(:h3, l(@event.datetime, format: :short), class: 'fw-lighter') %>
+            <%= content_tag(:h3, @event.address, class: 'fw-light text-info') %>
             <h3>
               <%= button_tag t('.show_on_map'), data: {'bs-toggle' => 'modal', 'bs-target' => '#staticBackdrop'}, class: 'btn btn-warning active btn-sm fs-5'%>
             </h3>
-            <p class="text-break"><%= @event.description %></p>
+            <%= content_tag(:p, @event.description, class: 'text-break') %>
           </div>
 
           <!-- Modal -->
@@ -37,12 +35,12 @@
               <%= link_to t('buttons.change'), edit_event_path(@event),
                 class: 'btn btn-secondary mb-1 rounded-pill' %>
               <%= link_to t('buttons.event_delete'), event_path(@event), class: 'btn btn-danger mb-1 rounded-pill',
-                method: :delete, data: { confirm: t('.are_you_sure') }%>
+                method: :delete, data: { confirm: t('.are_you_sure') } %>
             </div>
           <% end %>
         </div>
         <div class="col-md-4">
-          <h3 class="text-center mt-4 fw-light"><%= t('titles.event_creator') %></h3>
+          <%= content_tag(:h3, t('titles.event_creator'), class: 'text-center mt-4 fw-light') %>
           <div class="d-flex justify-content-center">
             <a href="<%= user_path(@event.user) %>" class="p-1 link-dark">
               <div>
@@ -59,9 +57,8 @@
     <div class="col-md-8">
       <div class="event-photos">
         <% unless @event.photos.count.zero? %>
-          <h3 class="fw-light mb-3"><%= t('titles.event_photos', count: @event.photos.count) %></h3>
+          <%= content_tag(:h3, t('titles.event_photos', count: @event.photos.count), class: 'fw-light mb-3') %>
           <div class="event-photos-gallery shadow">
-                
                 <!-- Carousel -->
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner rounded">
@@ -93,7 +90,7 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title"><%= t('.load_photo') %></h5>
+                <%= content_tag(:h5, t('.load_photo'), class: 'modal-title') %>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -109,13 +106,13 @@
       <div class="row justify-content-md-center">
         <div class="col-md-11 my-4">
         <% if @event.comments.exists? %>
-          <h3 class="fw-light"><%= t('.comments', count: @event.comments.count) %></h3>
+          <%= content_tag(:h3, t('.comments', count: @event.comments.count), class: 'fw-light') %>
           <div class="buffer-both">
             <%= render partial: 'comments/comment',
               collection: @event.comments.except(@new_comment).order(created_at: :asc) %>
           </div>
         <% else %>
-          <em><h6 class="text-center my-5 text-secondary"><%= t('.no_comments_yet') %></h6></em>
+          <%= content_tag(:em, content_tag(:h6, t('.no_comments_yet'), class: 'text-center my-5 text-secondary')) %>
         <% end %>
           <%= render partial: 'comments/form',
             locals: {comment: @new_comment || @event.comments.build} %>
@@ -125,7 +122,7 @@
     <div class="col-md-4">
       <% if @event.subscriptions.exists? %>
         <div class="event-subscriptions mt-3">
-          <h3 class="mb-3"><%= t('titles.event_subscribers', count: @event.subscriptions.count) %></h3>
+          <%= content_tag(:h3, t('titles.event_subscribers', count: @event.subscriptions.count), class: 'mb-3') %>
           <div>
             <div class="row row-cols-auto">
               <%= render partial: 'subscriptions/subscription',
@@ -134,7 +131,7 @@
           </div>
         </div>
       <% else %>
-        <em><p class="text-center text-secondary my-3">Тут будут участники.</p></em>
+        <%= content_tag(:em, content_tag(:p, t('.members_be_here'), class: 'text-center text-secondary my-3')) %>
       <% end %>
 
       <% unless @event.user == current_user || @event.subscribers.include?(current_user) %>
@@ -144,7 +141,6 @@
           } %>
         </div>
       <% end %>
-
     </div>
   </div> 
 </div>

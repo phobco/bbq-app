@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.randomize
-    @photos = Event.where_exists(:photos).map { |e| e.photos.sample }
+    @photos = Event.where_exists(:photos).map { |e| e.photos.sample }.take(5)
   end
 
   def show

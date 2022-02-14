@@ -2,10 +2,10 @@
     <%= render partial: 'partials/form_errors', locals: { model: comment } %>
 
     <% unless user_signed_in? %>
-        <div class="col-md-4 mb-2 fs-5">
-          <%= f.label :user_name %>
-          <%= f.text_field :user_name, class: 'form-control shadow-sm' %>
-        </div>
+      <div class="col-md-4 mb-2 fs-5">
+        <%= f.label :user_name %>
+        <%= f.text_field :user_name, class: 'form-control shadow-sm' %>
+      </div>
     <% end %>
 
     <div class="mb-3">

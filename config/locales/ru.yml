@@ -102,6 +102,7 @@ ru:
       comments: 'Комментарии (%{count}):'
       close: Закрыть
       load_photo: 'Загрузить фото:'
+      members_be_here: Тут будут участники.
       no_comments_yet: Комментариев пока нет.
       no_photo_yet: Фотографий пока нет.
       only_authorized_users: Добавлять фото могут только зарегистрированные пользователи.
@@ -131,6 +132,7 @@ ru:
       datetime: Дата
       owner: Организатор
       subject: 'Новая фотография %{event}'
+      photo: Photo
 
   photos:
     photo:

@@ -1,5 +1,4 @@
-
-  <div class="col px-1 mb-2">
+<div class="col px-1 mb-2">
   <span class="subscription <%= 'border p-2 rounded-pill bg-light shadow' if subscription.user.present? %>">
     <% if subscription.user.present? %>
       <%= render partial: 'users/user', object: subscription.user %>
@@ -8,12 +7,11 @@
     <% end %>
     <% if current_user_can_edit?(subscription) %>
       <%= link_to(
-              fa_icon(class: 'times', color: 'Tomato'),
-              event_subscription_path(subscription.event, subscription),
-              method: :delete,
-              data: {confirm: t('.are_you_sure')}
+            fa_icon(class: 'times', color: 'Tomato'),
+            event_subscription_path(subscription.event, subscription),
+            method: :delete,
+            data: {confirm: t('.are_you_sure')}
           ) %>
     <% end %>
   </span>
-  </div>
-
+</div>

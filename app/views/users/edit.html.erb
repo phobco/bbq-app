@@ -1,14 +1,11 @@
-<h1 class="text-center fw-light"><%= t('titles.account_edit') %></h1>
+<%= content_tag(:h1, t('titles.account_edit'), class: 'text-center fw-light') %>
 
 <div class="row d-flex justify-content-center mt-5">
-  <div class="col-md-3 buffer-top">
-    <%= image_tag user_avatar(@user), class: 'avatar shadow' %>
-  </div>
+  <%= content_tag(:div, image_tag(user_avatar(@user), class: 'avatar shadow'), class: 'col-md-3 buffer-top') %>
+  
   <div class="col-md-4 buffer-top border rounded pt-3 shadow">
     <%= render 'form' %>
 
-    <p class="buffer-top">
-      <%= link_to t('buttons.password_edit'), edit_user_registration_path %>
-    </p>
+    <%= content_tag(:p, link_to(t('buttons.password_edit'), edit_user_registration_path), class: 'buffer-top') %>
   </div>
 </div>

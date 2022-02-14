@@ -101,8 +101,6 @@ $ rails s
 
 Open `localhost:3000` in browser.
 
-### Production links
+### Production link
 
-Deployed on VPS: [`phobco.ru`](https://phobco.ru/)
-
-Deployed on Heroku: [`bbq-phobco.herokuapp.com`](https://bbq-phobco.herokuapp.com/)
+Deployed with `capistrano`  on VPS: [`phobco.ru`](https://phobco.ru/)

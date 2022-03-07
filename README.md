@@ -26,7 +26,6 @@ Images and photos are stored on [`Amazon S3`](https://aws.amazon.com/s3/) bucket
 - [`resque`](https://github.com/resque/resque) for background jobs
 - [`capistrano`](https://github.com/capistrano/capistrano) for deployment
 - [`omniauth-rails_csrf_protection`](https://github.com/cookpad/omniauth-rails_csrf_protection) for OAuth authentication
-  - [`omniauth-facebook`](https://github.com/simi/omniauth-facebook)
   - [`omniauth-google-oauth2`](https://github.com/zquestz/omniauth-google-oauth2)
   - [`omniauth-github`](https://github.com/omniauth/omniauth-github)
   - [`omniauth-vkontakte`](https://github.com/mamantoha/omniauth-vkontakte)
@@ -82,8 +81,6 @@ oauth:
   github_secret_key: <value>
   google_oauth2_app_id: <value>
   google_oauth2_secret_key: <value>
-  facebook_app_id: <value>
-  facebook_secret_key: <value>
 ```
 
 `:aws` — [`Amazon S3`](https://aws.amazon.com/s3/)
@@ -92,7 +89,7 @@ oauth:
 
 `:maps` — [`Yandex.Maps API`](https://yandex.ru/dev/maps)
 
-`:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2) [`OAuth Facebook`](https://developers.facebook.com/)
+`:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2)
 
 6. Start sever
 ```

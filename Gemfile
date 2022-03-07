@@ -19,7 +19,6 @@ gem 'rails-i18n'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-vkontakte'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-facebook'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
 gem 'carrierwave', '~> 2.0'

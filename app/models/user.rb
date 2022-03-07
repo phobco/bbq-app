@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[google_oauth2 facebook vkontakte github]
+         :omniauthable, omniauth_providers: %i[google_oauth2 vkontakte github]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -29,7 +29,6 @@ class User < ApplicationRecord
       name =
         case provider
         when :github   then access_token.info.nickname
-        when :facebook then access_token.info.name
         else access_token.info.first_name
         end
 

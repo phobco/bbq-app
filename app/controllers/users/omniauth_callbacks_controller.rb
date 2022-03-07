@@ -10,10 +10,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     authenticate_user(:google)
   end
-  
-  def facebook
-    authenticate_user(:facebook)
-  end
 
   private
 

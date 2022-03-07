@@ -103,6 +103,4 @@ Open `localhost:3000` in browser.
 
 ### Production link
 
-Deployed with `capistrano`  on VPS: [`phobco.ru`](https://phobco.ru/)
-
 Deployed on `Heroku`: [`link`](https://bbq-phobco.herokuapp.com/)

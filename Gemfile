@@ -33,6 +33,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'byebug'
   gem 'factory_bot_rails'
+  gem 'pry'                             # Better Ruby console interface than irb.
+  gem 'pry-rails'
 end
 
 group :development do

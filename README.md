@@ -33,29 +33,23 @@ Images and photos are stored on [`Amazon S3`](https://aws.amazon.com/s3/) bucket
 
 ### Installation
 
-1. Clone repo
-```
-$ git clone git@github.com:phobco/bbq.git
-$ cd bbq
-```
-
-2. Set up `config/database.yml.example` for your database and rename it
+1. Set up `config/database.yml.example` for your database and rename it
 ```
 $ mv config/database.yml.example config/database.yml
 ```
 
-3. Install gems
+2. Install gems
 ```
 $ bundle
 ```
 
-4. Create database and run migrations
+3. Create database and run migrations
 ```
 $ rails db:create
 $ rails db:migrate
 ```
 
-5. Generate `master.key` and credentials file
+4. Generate `master.key` and credentials file
 ```
 $ EDITOR=nano rails credentials:edit
 ```
@@ -91,13 +85,9 @@ oauth:
 
 `:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2)
 
-6. Start sever
+7. Start sever
 ```
-$ rails s
+$ bundle exec rails s
 ```
 
 Open `localhost:3000` in browser.
-
-### Production link
-
-Deployed on `Heroku`: [`link`](https://bbq-phobco.herokuapp.com/)

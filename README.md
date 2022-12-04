@@ -85,7 +85,7 @@ oauth:
 
 `:oauth` — [`OAuth VK`](https://dev.vk.com/) [`OAuth Github`](https://developer.github.com/) [`OAuth Google`](https://developers.google.com/identity/protocols/oauth2)
 
-7. Start sever
+5. Start sever
 ```
 $ bundle exec rails s
 ```
